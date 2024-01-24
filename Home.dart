@@ -14,8 +14,96 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
     "اللهم إني أعوذ بك من الجبن، وأعوذ بك من البخل، وأعوذ بك من أن أرد إلى أرذل العمر، وأعوذ بك من فتنة الدنيا، وعذاب القبر”. أخرجه البخاري",
     "اللهم إني أعوذ بك من زوال نعمتك، وتحول عافيتك وفجاءة نقمتك، وجميع سخطك”. أخرجه مسلم."
   ];
+  List<String> allahNames = [
+    'الرحمن',
+    'الرحيم',
+    'الملك',
+    'القدوس',
+    'السلام',
+    'المؤمن',
+    'المهيمن',
+    'العزيز',
+    'الجبار',
+    'المتكبر',
+    'الخالق',
+    'البارئ',
+    'المصور',
+    'الغفار',
+    'القهار',
+    'الوهاب',
+    'الرزاق',
+    'الفتاح',
+    'العليم',
+    'القابض',
+    'الباسط',
+    'الخافض',
+    'الرافع',
+    'المعز',
+    'المذل',
+    'السميع',
+    'البصير',
+    'الحكم',
+    'العدل',
+    'اللطيف',
+    'الخبير',
+    'الحليم',
+    'العظيم',
+    'الغفور',
+    'الشكور',
+    'العلي',
+    'الكبير',
+    'الحفيظ',
+    'المقيت',
+    'الحسيب',
+    'الجليل',
+    'الكريم',
+    'الرقيب',
+    'المجيب',
+    'الواسع',
+    'الحكيم',
+    'الودود',
+    'المجيد',
+    'الباعث',
+    'الشهيد',
+    'الحق',
+    'الوكيل',
+    'القوي',
+    'المتين',
+    'الولي',
+    'الحميد',
+    'المحصي',
+    'المبدئ',
+    'المعيد',
+    'المحيي',
+    'المميت',
+    'الحي',
+    'القيوم',
+    'الواجد',
+    'الماجد',
+    'الواحد',
+    'الأحد',
+    'الصمد',
+    'القادر',
+    'المقتدر',
+    'المقدم',
+    'المؤخر',
+    'الأول',
+    'الآخر',
+    'الظاهر',
+    'الباطن',
+    'الوالي',
+    'المتعالي',
+    'البر',
+    'التواب',
+    'المنتقم',
+    'العفو',
+    'الرؤوف',
+    'مالك الملك',
+    'ذو الجلال والإكرام',
+  ];
 
   int currentIndex = 0;
+  int currentIndex1 = 0;
 
   void changeText() {
     setState(() {
@@ -29,6 +117,21 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
       }
 
       currentIndex = newIndex;
+    });
+  }
+
+  void changeText1() {
+    setState(() {
+      // Generate a random index
+      var random = Random();
+      int newIndex = random.nextInt(m.length);
+
+      // Ensure the new index is different from the current one
+      while (newIndex == currentIndex1) {
+        newIndex = random.nextInt(allahNames.length);
+      }
+
+      currentIndex1 = newIndex;
     });
   }
 
@@ -138,7 +241,9 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
                                 height: 40,
                                 width: 40,
                               ),
-                              SizedBox(width: 10,),
+                              SizedBox(
+                                width: 10,
+                              ),
                               Text(
                                 "ورد المساء",
                                 style: Theme.of(context).textTheme.headline2,
@@ -226,8 +331,7 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
                                   image: AssetImage("assets/images/chat.png"),
                                   fit: BoxFit.cover,
                                   height: 40,
-                                  width: 40
-                              ),
+                                  width: 40),
                               SizedBox(width: 11),
                               Text(
                                 "تواصل معنا",
@@ -248,8 +352,7 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.grey,
-                  border: Border.all(color: Colors.white)
-              ),
+                  border: Border.all(color: Colors.white)),
               child: Column(
                 children: [
                   Row(
@@ -258,7 +361,9 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
                         onPressed: () {},
                         icon: Icon(Icons.share),
                       ),
-                      SizedBox(width: 120,),
+                      SizedBox(
+                        width: 120,
+                      ),
                       Text(
                         "كرروا هذا الدعاء 7 مرات",
                         style: Theme.of(context).textTheme.headline2,
@@ -266,7 +371,9 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 30,
+                  ),
                   Container(
                     padding: EdgeInsets.all(16.0),
                     child: Text(
@@ -281,10 +388,51 @@ class _CollapsingAppbarPageState extends State<CollapsingAppbarPage> {
                 ],
               ),
             ),
+            Container(
+              height: 350,
+              width: 360,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.grey,
+                  border: Border.all(color: Colors.white)),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.share),
+                      ),
+                      SizedBox(
+                        width: 120,
+                      ),
+                      Text(
+                        "أسماء الله الحسنى",
+                        style: Theme.of(context).textTheme.headline2,
+                        textAlign: TextAlign.right,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      allahNames[currentIndex1],
+                      style: TextStyle(fontSize: 24.0),
+                    ),
+                  ),
+                  FloatingActionButton(
+                    onPressed: changeText1,
+                    child: Icon(Icons.change_circle),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
